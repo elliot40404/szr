@@ -1,0 +1,26 @@
+[package]
+name = "szr"
+version = "0.1.0"
+edition = "2021"
+authors = ["Elliot40404"]
+description = "A simple command line utility check file sizes blazingly fast"
+license = "MIT"
+repository = "https://github.com/elliot40404/szr"
+homepage = "https://github.com/elliot40404/szr"
+readme = "README.md"
+keywords = ["du", "size", "file", "powershell", "windows"]
+categories = ["command-line-utilities", "development-tools"]
+
+[[bin]]
+name = "szr"
+path = "src/main.rs"
+
+[dependencies]
+
+[profile.release]
+debug = false
+lto = true
+codegen-units = 1
+strip = true
+opt-level = "z"
+panic = "abort"
